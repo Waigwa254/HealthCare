@@ -1,8 +1,12 @@
 package com.example.health_care
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ListView
+import android.widget.Toast
 
 class  SurgeonDocActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,5 +25,15 @@ class  SurgeonDocActivity: AppCompatActivity() {
 
 
         list_view.adapter = MyAdapter(this, R.layout.row, list)
+
+        list_view.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
+
+            val selecteditem=parent.getItemAtPosition(position) as model
+
+            val click= Intent(this,BookAppointment::class.java).apply {
+                putExtra("selecteditem", selecteditem.Description)
+            }
+            startActivity(click)
+            Toast.makeText(this,"appointment clicked", Toast.LENGTH_SHORT).show()}
     }
 }

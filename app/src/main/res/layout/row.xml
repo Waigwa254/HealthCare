@@ -13,9 +13,6 @@
         android:layout_height="75sp"
         app:srcCompat="@drawable/cdsdd" />
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,6 +41,6 @@
                 android:text="sub Text" />
 
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+
 
 </LinearLayout>

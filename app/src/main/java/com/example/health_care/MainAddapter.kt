@@ -1,8 +1,12 @@
 package com.example.health_care
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ListView
+import android.widget.Toast
 
 class MainAddapter : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,5 +23,15 @@ class MainAddapter : AppCompatActivity() {
         list.add(model("DR.Antony", "Hospital Address:6343544                                             EXP:2yrs              Mobilie:07467678348      CONS.FEE=200", R.drawable.france))
 
         list_view.adapter=MyAdapter(this,R.layout.row,list)
+
+        list_view.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
+
+            val selecteditem=parent.getItemAtPosition(position) as model
+
+            val click= Intent(this,BookAppointment::class.java).apply {
+                putExtra("selecteditem", selecteditem.Description)
+            }
+            startActivity(click)
+            Toast.makeText(this,"appointment clicked", Toast.LENGTH_SHORT).show()}
     }
 }

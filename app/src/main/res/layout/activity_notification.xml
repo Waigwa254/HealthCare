@@ -34,41 +34,36 @@
             android:hint="MESSAGE" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
 
-        <DatePicker
-            android:id="@+id/datepicker"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:datePickerMode="spinner"
-            android:calendarViewShown="false"
-            android:layout_gravity="center"
-            android:scaleX="0.7"
-            android:scaleY="0.7"
-            android:layout_marginHorizontal="30dp"/>
+    <DatePicker
+        android:id="@+id/datepicker"
+        android:layout_width="278dp"
+        android:layout_height="146dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="30dp"
+        android:layout_weight="1"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:scaleX="0.7"
+        android:scaleY="0.7" />
+
+    <TimePicker
+        android:id="@+id/timepicker"
+        android:layout_width="wrap_content"
+        android:layout_height="176dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="30dp"
+        android:layout_weight="1"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:timePickerMode="spinner" />
 
 
-        <TimePicker
-            android:id="@+id/timepicker"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:timePickerMode="spinner"
-            android:layout_gravity="center"
-            android:scaleX="0.7"
-            android:scaleY="0.7"
-            android:layout_marginHorizontal="30dp"/>
-
-    </LinearLayout>
     <Button
         android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:text="schedule_notification"/>
+        android:layout_marginTop="20dp"
+        android:text="schedule_notification" />
 </LinearLayout>
